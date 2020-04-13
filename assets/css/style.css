@@ -2041,6 +2041,7 @@ form input[type="password"]:focus {
 .single-features .features-content .features-title {
   font-size: 25px;
   display: flex;
+  justify-content: space-between;
   font-weight: 500
 }
 
