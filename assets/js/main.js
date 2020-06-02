@@ -1,22 +1,22 @@
-$(function () {
+$(function() {
 
     "use strict";
 
     //===== Prealoder
 
-    $(window).on('load', function (event) {
-        $('.preloader').delay(50).fadeOut(500);
+    $(window).on('load', function(event) {
+        //    $('.preloader').delay(50).fadeOut(500);
     });
 
     //===== SSS
-    $('.features-content').click(function () {
+    $('.features-content').click(function() {
         $('.text', this).toggleClass('active');
     });
 
 
     //===== Sticky
 
-    $(window).on('scroll', function (event) {
+    $(window).on('scroll', function(event) {
         var scroll = $(window).scrollTop();
         if (scroll < 20) {
             $(".navbar-area").removeClass("sticky");
@@ -31,10 +31,10 @@ $(function () {
 
     var scrollLink = $('.page-scroll');
     // Active link switching
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         var scrollbarLocation = $(this).scrollTop();
 
-        scrollLink.each(function () {
+        scrollLink.each(function() {
 
             if ($(this.hash).offset()) {
                 var sectionOffset = $(this.hash).offset().top - 73;
@@ -50,15 +50,15 @@ $(function () {
 
     //===== close navbar-collapse when a  clicked
 
-    $(".navbar-nav a").on('click', function () {
+    $(".navbar-nav a").on('click', function() {
         $(".navbar-collapse").removeClass("show");
     });
 
-    $(".navbar-toggler").on('click', function () {
+    $(".navbar-toggler").on('click', function() {
         $(this).toggleClass("active");
     });
 
-    $(".navbar-nav a").on('click', function () {
+    $(".navbar-nav a").on('click', function() {
         $(".navbar-toggler").removeClass('active');
     });
 
@@ -68,7 +68,7 @@ $(function () {
     //===== Back to top
 
     // Show or hide the sticky footer button
-    $(window).on('scroll', function (event) {
+    $(window).on('scroll', function(event) {
         if ($(this).scrollTop() > 600) {
             $('.back-to-top').fadeIn(200)
         } else {
@@ -78,7 +78,7 @@ $(function () {
 
 
     //Animate the scroll to yop
-    $('.back-to-top').on('click', function (event) {
+    $('.back-to-top').on('click', function(event) {
         event.preventDefault();
 
         $('html, body').animate({
@@ -89,13 +89,13 @@ $(function () {
 
     //===== Svg
 
-    jQuery('img.svg').each(function () {
+    jQuery('img.svg').each(function() {
         var $img = jQuery(this);
         var imgID = $img.attr('id');
         var imgClass = $img.attr('class');
         var imgURL = $img.attr('src');
 
-        jQuery.get(imgURL, function (data) {
+        jQuery.get(imgURL, function(data) {
             // Get the SVG tag, ignore the rest
             var $svg = jQuery(data).find('svg');
 
